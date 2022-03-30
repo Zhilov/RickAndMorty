@@ -1,4 +1,4 @@
-package com.example.rickandmorty.fragments
+package com.example.rickandmorty.sections.episode
 
 import android.content.Context
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.rickandmorty.R
 
-class FragmentLocation : Fragment(R.layout.fragment_location) {
+class FragmentEpisode : Fragment(R.layout.fragment_episode) {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -17,8 +17,8 @@ class FragmentLocation : Fragment(R.layout.fragment_location) {
     }
 
     companion object {
-        const val FRAGMENT_LOCATION_TAG = "FRAGMENT_LOCATION_TAG"
+        const val FRAGMENT_EPISODE_TAG = "FRAGMENT_EPISODE_TAG"
 
-        fun newInstance() = FragmentLocation()
+        fun newInstance() = FragmentEpisode()
     }
 }
