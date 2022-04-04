@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.rickandmorty.R
 import com.squareup.picasso.Picasso
 
-private const val KEY_CHARACTER = "key.character"
+private const val KEY_CHARACTER_DETAILS = "key.character.details"
 
 class FragmentCharacterDetails : Fragment(R.layout.fragment_character_details) {
 
@@ -18,7 +18,7 @@ class FragmentCharacterDetails : Fragment(R.layout.fragment_character_details) {
         const val FRAGMENT_CHARACTER_DETAILS_TAG = "FRAGMENT_CHARACTER_DETAILS_TAG"
 
         fun newInstance(character: Character): FragmentCharacterDetails {
-            val bundle = bundleOf(KEY_CHARACTER to character)
+            val bundle = bundleOf(KEY_CHARACTER_DETAILS to character)
 
             return FragmentCharacterDetails().apply { arguments = bundle }
         }
@@ -44,7 +44,7 @@ class FragmentCharacterDetails : Fragment(R.layout.fragment_character_details) {
 
     private fun getContactFromArguments() {
         arguments?.let {
-            it.getSerializable(KEY_CHARACTER)?.let {
+            it.getSerializable(KEY_CHARACTER_DETAILS)?.let {
                 if (it is Character) {
                     character = it
                 } else {

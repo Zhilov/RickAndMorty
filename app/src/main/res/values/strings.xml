@@ -6,8 +6,12 @@
     <string name="title_episode">Episodes</string>
     <string name="title_character_details">Character Details</string>
     <string name="title_location_details">Location Details</string>
+    <string name="title_episode_details">Edpisode Details</string>
     <string name="character_adapter_name">Name: %1$s</string>
     <string name="character_adapter_species">Species: %1$s</string>
     <string name="character_adapter_status">Status: %1$s</string>
     <string name="character_adapter_gender">Gender: %1$s</string>
+    <string name="location_adapter_name">Name: %1$s</string>
+    <string name="location_adapter_type">Type: %1$s</string>
+    <string name="location_adapter_dimension">Dimension: %1$s</string>
 </resources>

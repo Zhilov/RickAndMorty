@@ -14,7 +14,7 @@ class LocationListAdapter(
     private val locationList = ArrayList<Location>(0)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.location_list_item, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_location_list_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

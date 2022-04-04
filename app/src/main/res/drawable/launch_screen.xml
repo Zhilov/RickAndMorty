@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Атрибут android:opacity=”opaque” крайне важен для предотвращения черных миганий при переходе к вашей теме -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+
+    <item android:drawable="@drawable/bg_gradient"/>
+
+    <item
+        android:width="144dp"
+        android:height="144dp"
+        android:drawable="@drawable/svg_logo"
+        android:gravity="center" />
+
+</layer-list>

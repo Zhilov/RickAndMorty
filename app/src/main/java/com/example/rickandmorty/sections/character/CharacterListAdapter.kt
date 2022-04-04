@@ -1,6 +1,5 @@
 package com.example.rickandmorty.sections.character
 
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,7 @@ class CharacterListAdapter(
     private val characterList = ArrayList<Character>(0)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.character_list_item, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_character_list_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -48,7 +47,7 @@ class CharacterListAdapter(
             name.text = itemView.resources.getString(R.string.character_adapter_name, character.name)
             species.text = itemView.resources.getString(R.string.character_adapter_species, character.species)
             status.text = itemView.resources.getString(R.string.character_adapter_status, character.status)
-            gender.text = itemView.resources.getString(R.string.character_adapter_name, character.gender)
+            gender.text = itemView.resources.getString(R.string.character_adapter_gender, character.gender)
 
             v.setOnClickListener {
                 clickListener.invoke(characterList[adapterPosition])
