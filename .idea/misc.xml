@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/drawable-v24/svg_logo.xml" value="0.11944444444444445" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/drawable/bg_gradient.xml" value="0.11944444444444445" />
+        <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/drawable/borders.xml" value="0.10092592592592593" />
+        <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/drawable/character_spinner_item.xml" value="0.10092592592592593" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/drawable/ic_logo_foreground.xml" value="0.10740740740740741" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/drawable/ic_svg_gobbler.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/drawable/launch_screen.xml" value="0.10740740740740741" />
@@ -16,7 +18,8 @@
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/episode_list_item.xml" value="0.12228260869565218" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_character.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_character_details.xml" value="0.11141304347826086" />
-        <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_character_filter.xml" value="0.1" />
+        <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_character_filter.xml" value="0.22" />
+        <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_character_filter_spinner_item.xml" value="0.1" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_character_list_item.xml" value="0.10461956521739131" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_episode.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_episode_details.xml" value="0.12228260869565218" />
@@ -26,6 +29,7 @@
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/fragment_location_list_item.xml" value="0.13269927536231885" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/layout/location_list_item.xml" value="0.1" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2598958333333333" />
+        <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/menu/toolbar_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/Ruslan Zhilov/AndroidStudioProjects/AndersenProjects6/RickAndMorty/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>
     </option>

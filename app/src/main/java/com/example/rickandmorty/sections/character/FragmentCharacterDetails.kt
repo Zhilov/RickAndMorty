@@ -2,9 +2,11 @@ package com.example.rickandmorty.sections.character
 
 import android.content.Context
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.rickandmorty.R
@@ -40,6 +42,13 @@ class FragmentCharacterDetails : Fragment(R.layout.fragment_character_details) {
 
         getContactFromArguments()
         bindView(character)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.home -> Toast.makeText(requireContext(), "Finish!", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun getContactFromArguments() {

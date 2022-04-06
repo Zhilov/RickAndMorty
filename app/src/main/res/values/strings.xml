@@ -25,4 +25,18 @@
     <string name="alive">Alive</string>
     <string name="apply">Apply</string>
     <string name="title_character_filter">Character Filter</string>
+    <string name="search">Search</string>
+    <string-array name="character_spinner_status">
+        <item>Choose status</item>
+        <item>Status</item>
+        <item>Dead</item>
+        <item>Unknown</item>
+    </string-array>
+    <string-array name="character_spinner_gender">
+        <item>Choose gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Genderless</item>
+        <item>Unknown</item>
+    </string-array>
 </resources>

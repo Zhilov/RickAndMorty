@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -10,7 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:hint="@string/name"
+        app:hintTextColor="#ccc">
 
         <EditText
             android:id="@+id/character_filter_edit_name"
@@ -18,7 +21,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:hint="@string/name" />
+            android:backgroundTint="#ccc"
+            android:hint="@string/name"
+            android:textColor="@color/white"
+            android:textColorHint="#ccc" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -28,7 +34,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:hint="@string/species"
+        app:hintTextColor="#ccc">
 
         <EditText
             android:id="@+id/character_filter_edit_species"
@@ -36,7 +44,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:hint="@string/species" />
+            android:backgroundTint="#ccc"
+            android:hint="@string/species"
+            android:textColor="@color/white"
+            android:textColorHint="#ccc" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -46,7 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:hint="@string/type"
+        app:hintTextColor="#ccc">
 
         <EditText
             android:id="@+id/character_filter_edit_type"
@@ -54,7 +67,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:hint="@string/type" />
+            android:backgroundTint="#ccc"
+            android:hint="@string/type"
+            android:textColor="@color/white"
+            android:textColorHint="#ccc" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,27 +79,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:backgroundTint="@color/white" />
 
     <Spinner
         android:id="@+id/character_filter_spinner_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:backgroundTint="@color/white" />
 
     <Button
-        android:id="@+id/character_Filter_button_apply"
+        android:id="@+id/character_filter_button_apply"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/apply"/>
-
-
+        android:backgroundTint="#302b63"
+        android:fontFamily="@font/basic"
+        android:text="@string/apply"
+        android:textColor="@color/white" />
 
 
 </LinearLayout>
