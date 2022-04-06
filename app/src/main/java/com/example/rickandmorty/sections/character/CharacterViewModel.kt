@@ -3,6 +3,7 @@ package com.example.rickandmorty.sections.character
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.retrofit.Common
 import com.example.rickandmorty.retrofit.RetrofitServices
 import io.reactivex.rxjava3.core.Observable
@@ -21,7 +22,7 @@ class CharacterViewModel : ViewModel(){
 
     fun getCharacter(id: Int) {
 
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             mService.getCharacter(id).enqueue(object: Callback<Character>{
                 override fun onResponse(call: Call<Character>, response: Response<Character>) {
                     character.postValue(response.body())
@@ -41,7 +42,7 @@ class CharacterViewModel : ViewModel(){
 //                characters.postValue(it)
 //            }
 
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             mService.getAllCharacters(page).enqueue(object: Callback<Characters>{
                 override fun onResponse(call: Call<Characters>, response: Response<Characters>) {
                     characters.postValue(response.body())

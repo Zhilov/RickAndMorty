@@ -2,6 +2,7 @@ package com.example.rickandmorty.sections.episode
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.retrofit.Common
 import com.example.rickandmorty.retrofit.RetrofitServices
 import com.example.rickandmorty.sections.character.Character
@@ -20,7 +21,7 @@ class EpisodeViewModel : ViewModel(){
     var episodes = MutableLiveData<Episodes>(null)
 
     fun getEpisode(id: Int) {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             mService.getEpisode(id).enqueue(object: Callback<Episode> {
                 override fun onResponse(call: Call<Episode>, response: Response<Episode>) {
                     episode.postValue(response.body())
@@ -35,7 +36,7 @@ class EpisodeViewModel : ViewModel(){
     }
 
     fun getEpisodes(page: Int){
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             mService.getAllEpisodes(page).enqueue(object: Callback<Episodes> {
                 override fun onResponse(call: Call<Episodes>, response: Response<Episodes>) {
                     episodes.postValue(response.body())

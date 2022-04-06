@@ -2,9 +2,9 @@ package com.example.rickandmorty.retrofit
 
 import com.example.rickandmorty.sections.character.Character
 import com.example.rickandmorty.sections.character.Characters
-import com.example.rickandmorty.sections.character.Location
 import com.example.rickandmorty.sections.episode.Episode
 import com.example.rickandmorty.sections.episode.Episodes
+import com.example.rickandmorty.sections.location.Location
 import com.example.rickandmorty.sections.location.Locations
 import retrofit2.Call
 import retrofit2.http.GET

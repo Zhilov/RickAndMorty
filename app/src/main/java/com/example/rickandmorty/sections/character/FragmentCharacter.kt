@@ -19,10 +19,6 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 class FragmentCharacter : Fragment(R.layout.fragment_character) {
 
-    companion object {
-        const val FRAGMENT_CHARACTER_TAG = "FRAGMENT_CHARACTER_TAG"
-    }
-
     private lateinit var navigator: Navigator
     private lateinit var viewModel: CharacterViewModel
 
@@ -31,18 +27,31 @@ class FragmentCharacter : Fragment(R.layout.fragment_character) {
 
     private var characterListAdapter = CharacterListAdapter { character ->
         val fragmentCharacterDetails = FragmentCharacterDetails.newInstance(character)
-        navigator.navigate(fragmentCharacterDetails, FRAGMENT_CHARACTER_TAG)
+        navigator.navigate(fragmentCharacterDetails, FRAGMENT_CHARACTER_DETAILS_TAG)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindList()
+        getFilterFromArguments()
         updateList(1)
 
         swipeRefreshLayout.setOnRefreshListener {
             updateList(2)
             false.also { swipeRefreshLayout.isRefreshing = it }
         }
+    }
+
+    private fun getFilterFromArguments() {
+        arguments?.let {
+            it.getSerializable(Companion.KEY_CHARACTER_FILTER)?.let { it ->
+                if (it is Character) {
+                    viewModel.getCharacter(1)
+                } else {
+                    return
+                }
+            }
+        } ?: return
     }
 
     private fun updateList(page: Int) {
@@ -76,5 +85,11 @@ class FragmentCharacter : Fragment(R.layout.fragment_character) {
         } else {
             error("Host should implement Navigator interface")
         }
+    }
+
+    companion object {
+        const val FRAGMENT_CHARACTER_DETAILS_TAG = "FRAGMENT_CHARACTER_DETAILS_TAG"
+        const val FRAGMENT_CHARACTER_FILTER_TAG = "FRAGMENT_CHARACTER_FILTER_TAG"
+        private const val KEY_CHARACTER_FILTER = "key.character.filter"
     }
 }

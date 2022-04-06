@@ -14,4 +14,15 @@
     <string name="location_adapter_name">Name: %1$s</string>
     <string name="location_adapter_type">Type: %1$s</string>
     <string name="location_adapter_dimension">Dimension: %1$s</string>
+    <string name="name">Name</string>
+    <string name="species">Species</string>
+    <string name="type">Type</string>
+    <string name="dead">Dead</string>
+    <string name="unknown">Unknown</string>
+    <string name="female">Female</string>
+    <string name="genderless">Genderless</string>
+    <string name="male">Male</string>
+    <string name="alive">Alive</string>
+    <string name="apply">Apply</string>
+    <string name="title_character_filter">Character Filter</string>
 </resources>

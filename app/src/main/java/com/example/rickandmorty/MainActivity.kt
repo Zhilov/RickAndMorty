@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity(), Navigator {
 
     override fun navigate(fragment: Fragment, tag: String){
             when(tag){
-                FragmentCharacter.FRAGMENT_CHARACTER_TAG -> navController.navigate(R.id.navigation_character_details, fragment.arguments)
+                FragmentCharacter.FRAGMENT_CHARACTER_DETAILS_TAG -> navController.navigate(R.id.navigation_character_details, fragment.arguments)
+                FragmentCharacter.FRAGMENT_CHARACTER_FILTER_TAG -> navController.navigate(R.id.navigation_character_filter, fragment.arguments)
                 FragmentLocation.FRAGMENT_LOCATION_TAG -> navController.navigate(R.id.navigation_location_details, fragment.arguments)
                 FragmentEpisode.FRAGMENT_EPISODE_TAG -> navController.navigate(R.id.navigation_episode_details, fragment.arguments)
             }
