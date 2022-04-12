@@ -4,18 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    app:cardCornerRadius="16dp">
+    android:backgroundTint="@color/grey">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#302b63">
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
+        <FrameLayout
             android:id="@+id/card_character_image"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            app:cardCornerRadius="16dp"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -24,7 +22,13 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
 
-        </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/image_gradient" />
+
+        </FrameLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,8 +45,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/basic"
                 android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/character_item_text_size"
+                android:textColor="@color/yellow"
+                android:textSize="25dp"
                 android:textStyle="bold"
 
 

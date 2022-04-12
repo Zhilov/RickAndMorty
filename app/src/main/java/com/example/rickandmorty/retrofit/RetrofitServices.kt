@@ -10,16 +10,22 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.QueryMap
 
 interface RetrofitServices {
 
     //Character
 
     @GET("api/character")
-    fun getAllCharacters(@Query ("page") page: Int): Call<Characters>
+    fun getAllCharacters(@Query("page") page: Int): Call<Characters>
 
     @GET("api/character/{id}")
     fun getCharacter(@Path("id") id: Int): Call<Character>
+
+    @GET("api/character")
+    fun getCharactersWithFilter(
+        @QueryMap paramsMap: HashMap<String, String>,
+    ): Call<Characters>
 
 
     //Location
@@ -30,6 +36,10 @@ interface RetrofitServices {
     @GET("api/location/{id}")
     fun getLocation(@Path("id") id: Int): Call<Location>
 
+    @GET("api/location")
+    fun getLocationsWithFilter(
+        @QueryMap paramsMap: HashMap<String, String>,
+    ): Call<Locations>
 
     //Episode
 
@@ -38,5 +48,10 @@ interface RetrofitServices {
 
     @GET("api/episode/{id}")
     fun getEpisode(@Path("id") id: Int): Call<Episode>
+
+    @GET("api/episode")
+    fun getEpisodesWithFilter(
+        @QueryMap paramsMap: HashMap<String, String>,
+    ): Call<Episodes>
 
 }

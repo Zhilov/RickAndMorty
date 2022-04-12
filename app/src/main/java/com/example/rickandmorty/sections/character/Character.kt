@@ -8,7 +8,11 @@ import java.io.Serializable
 data class Characters(
     @SerializedName("results")
     var characters: List<Character>
-)
+){
+    private fun toCharacters(){
+
+    }
+}
 
 @Parcelize
 data class Character(
@@ -31,7 +35,8 @@ data class Origin(
     val url: String,
 ): Parcelable, Serializable
 
-data class Location(
-    val name: String,
-    val url: String,
-)
+@Parcelize
+class Error(
+    @SerializedName("error")
+    var errorMessage: String
+): Parcelable

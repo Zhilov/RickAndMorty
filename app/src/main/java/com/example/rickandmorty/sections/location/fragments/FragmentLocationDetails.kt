@@ -1,4 +1,4 @@
-package com.example.rickandmorty.sections.location
+package com.example.rickandmorty.sections.location.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -7,27 +7,13 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.rickandmorty.R
+import com.example.rickandmorty.sections.location.Location
 
-private const val KEY_LOCATION_DETAILS = "key.location.details"
 
 class FragmentLocationDetails : Fragment(R.layout.fragment_location_details) {
 
-    companion object {
-        const val FRAGMENT_LOCATION_DETAILS_TAG = "FRAGMENT_LOCATION_DETAILS_TAG"
-
-        fun newInstance(location: Location): FragmentLocationDetails {
-            val bundle = bundleOf(KEY_LOCATION_DETAILS to location)
-
-            return FragmentLocationDetails().apply { arguments = bundle }
-        }
-    }
-
     private lateinit var location: Location
     private lateinit var textName: TextView
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,5 +45,20 @@ class FragmentLocationDetails : Fragment(R.layout.fragment_location_details) {
             textName = findViewById(R.id.text_location_details_name)
 
         }
+    }
+
+    companion object {
+        private const val KEY_LOCATION_DETAILS = "key.location.details"
+        const val FRAGMENT_LOCATION_DETAILS_TAG = "FRAGMENT_LOCATION_DETAILS_TAG"
+
+        fun newInstance(location: Location): FragmentLocationDetails {
+            val bundle = bundleOf(KEY_LOCATION_DETAILS to location)
+
+            return FragmentLocationDetails().apply { arguments = bundle }
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
     }
 }

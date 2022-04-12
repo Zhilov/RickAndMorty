@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#302b63">
+        android:background="@color/grey">
 
         <TextView
             android:id="@+id/text_episode_name"
@@ -18,7 +18,7 @@
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/basic"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/yellow"
             android:textSize="@dimen/episode_item_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/text_episode_episode"
@@ -46,11 +46,11 @@
             android:id="@+id/text_episode_air_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/basic"
             android:textAlignment="center"
             android:textColor="#ccc"
             android:textSize="15sp"
-            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

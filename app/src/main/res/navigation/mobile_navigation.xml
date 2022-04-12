@@ -11,7 +11,7 @@
 
     <fragment
         android:id="@+id/navigation_character"
-        android:name="com.example.rickandmorty.sections.character.FragmentCharacter"
+        android:name="com.example.rickandmorty.sections.character.fragments.FragmentCharacter"
         android:label="@string/title_character"
         tools:layout="@layout/fragment_character">
 
@@ -27,13 +27,13 @@
 
     <fragment
         android:id="@+id/navigation_character_details"
-        android:name="com.example.rickandmorty.sections.character.FragmentCharacterDetails"
+        android:name="com.example.rickandmorty.sections.character.fragments.FragmentCharacterDetails"
         android:label="@string/title_character_details"
         tools:layout="@layout/fragment_character_details" />
 
     <fragment
         android:id="@+id/navigation_character_filter"
-        android:name="com.example.rickandmorty.sections.character.FragmentCharacterFilter"
+        android:name="com.example.rickandmorty.sections.character.fragments.FragmentCharacterFilter"
         android:label="@string/title_character_filter"
         tools:layout="@layout/fragment_character_filter"/>
 
@@ -43,19 +43,31 @@
 
     <fragment
         android:id="@+id/navigation_location"
-        android:name="com.example.rickandmorty.sections.location.FragmentLocation"
+        android:name="com.example.rickandmorty.sections.location.fragments.FragmentLocation"
         android:label="@string/title_location"
         tools:layout="@layout/fragment_location">
+
         <action
             android:id="@+id/action_navigation_location_to_navigation_location_details"
             app:destination="@id/navigation_location_details" />
+
+        <action
+            android:id="@+id/action_navigation_location_to_navigation_location_filter"
+            app:destination="@id/navigation_location_filter" />
+
     </fragment>
 
     <fragment
         android:id="@+id/navigation_location_details"
-        android:name="com.example.rickandmorty.sections.location.FragmentLocationDetails"
+        android:name="com.example.rickandmorty.sections.location.fragments.FragmentLocationDetails"
         android:label="@string/title_location_details"
         tools:layout="@layout/fragment_location_details" />
+
+    <fragment
+        android:id="@+id/navigation_location_filter"
+        android:name="com.example.rickandmorty.sections.location.fragments.FragmentLocationFilter"
+        android:label="@string/title_location_filter"
+        tools:layout="@layout/fragment_location_filter" />
 
 
     <!--Episode!-->
@@ -63,18 +75,30 @@
 
     <fragment
         android:id="@+id/navigation_episode"
-        android:name="com.example.rickandmorty.sections.episode.FragmentEpisode"
+        android:name="com.example.rickandmorty.sections.episode.fragments.FragmentEpisode"
         android:label="@string/title_episode"
         tools:layout="@layout/fragment_episode">
+
         <action
             android:id="@+id/action_navigation_episode_to_navigation_episode_details"
             app:destination="@id/navigation_episode_details" />
+
+        <action
+            android:id="@+id/action_navigation_episode_to_navigation_episode_filter"
+            app:destination="@id/navigation_episode_filter" />
+
     </fragment>
 
     <fragment
         android:id="@+id/navigation_episode_details"
-        android:name="com.example.rickandmorty.sections.episode.FragmentEpisodeDetails"
+        android:name="com.example.rickandmorty.sections.episode.fragments.FragmentEpisodeDetails"
         android:label="@string/title_episode_details"
         tools:layout="@layout/fragment_episode_details" />
+
+    <fragment
+        android:id="@+id/navigation_episode_filter"
+        android:name="com.example.rickandmorty.sections.episode.fragments.FragmentEpisodeFilter"
+        android:label="@string/title_episode_filter"
+        tools:layout="@layout/fragment_episode_filter" />
 
 </navigation>

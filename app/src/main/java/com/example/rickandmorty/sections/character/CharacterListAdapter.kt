@@ -44,7 +44,7 @@ class CharacterListAdapter(
 
         fun bind(character: Character) {
             Picasso.get().load(character.image).into(image)
-            name.text = itemView.resources.getString(R.string.character_adapter_name, character.name)
+            name.text = character.name
             species.text = itemView.resources.getString(R.string.character_adapter_species, character.species)
             status.text = itemView.resources.getString(R.string.character_adapter_status, character.status)
             gender.text = itemView.resources.getString(R.string.character_adapter_gender, character.gender)

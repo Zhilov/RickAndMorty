@@ -1,4 +1,4 @@
-package com.example.rickandmorty.sections.character
+package com.example.rickandmorty.sections.character.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -10,21 +10,10 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.rickandmorty.R
+import com.example.rickandmorty.sections.character.Character
 import com.squareup.picasso.Picasso
 
-private const val KEY_CHARACTER_DETAILS = "key.character.details"
-
 class FragmentCharacterDetails : Fragment(R.layout.fragment_character_details) {
-
-    companion object {
-        const val FRAGMENT_CHARACTER_DETAILS_TAG = "FRAGMENT_CHARACTER_DETAILS_TAG"
-
-        fun newInstance(character: Character): FragmentCharacterDetails {
-            val bundle = bundleOf(KEY_CHARACTER_DETAILS to character)
-
-            return FragmentCharacterDetails().apply { arguments = bundle }
-        }
-    }
 
     private lateinit var character: Character
     private lateinit var imageView: ImageView
@@ -32,10 +21,6 @@ class FragmentCharacterDetails : Fragment(R.layout.fragment_character_details) {
     private lateinit var textSpecies: TextView
     private lateinit var textStatus: TextView
     private lateinit var textGender: TextView
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -79,14 +64,21 @@ class FragmentCharacterDetails : Fragment(R.layout.fragment_character_details) {
             textSpecies = findViewById(R.id.text_character_details_species)
             textStatus = findViewById(R.id.text_character_details_status)
             textGender = findViewById(R.id.text_character_details_gender)
-
-//            findViewById<View>(R.id.btn_save).setOnClickListener {
-//                if (checkFields()) {
-//                    editContact(Contact(contact.id, inputName.text.toString(), inputPhone.text.toString()))
-//                } else {
-//                    //Show message
-//                }
-//            }
         }
+    }
+
+    companion object {
+        const val FRAGMENT_CHARACTER_DETAILS_TAG = "FRAGMENT_CHARACTER_DETAILS_TAG"
+        private const val KEY_CHARACTER_DETAILS = "key.character.details"
+
+        fun newInstance(character: Character): FragmentCharacterDetails {
+            val bundle = bundleOf(KEY_CHARACTER_DETAILS to character)
+
+            return FragmentCharacterDetails().apply { arguments = bundle }
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
     }
 }

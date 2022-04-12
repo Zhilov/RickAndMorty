@@ -1,36 +1,34 @@
-package com.example.rickandmorty.sections.episode
+package com.example.rickandmorty.sections.episode.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import com.example.rickandmorty.Navigator
 import com.example.rickandmorty.R
-
-private const val KEY_EPISODE_DETAILS = "key.episode.details"
+import com.example.rickandmorty.sections.episode.Episode
 
 class FragmentEpisodeDetails : Fragment(R.layout.fragment_episode_details) {
 
-    companion object {
-        fun newInstance(episode: Episode): FragmentEpisodeDetails {
-            val bundle = bundleOf(KEY_EPISODE_DETAILS to episode)
-            return FragmentEpisodeDetails().apply { arguments = bundle }
-        }
-    }
-
+    private lateinit var navigator: Navigator
     private lateinit var episode: Episode
     private lateinit var name: TextView
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         getEpisodeFromArguments()
         bindView(episode)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.home -> navigator.navigateBack()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun getEpisodeFromArguments() {
@@ -54,6 +52,26 @@ class FragmentEpisodeDetails : Fragment(R.layout.fragment_episode_details) {
         requireView().run {
             name = findViewById(R.id.text_episode_details_name)
 
+        }
+    }
+
+    companion object {
+        const val FRAGMENT_EPISODE_DETAILS_TAG = "FRAGMENT_EPISODE_DETAILS_TAG"
+        private const val KEY_EPISODE_DETAILS = "key.episode.details"
+
+        fun newInstance(episode: Episode): FragmentEpisodeDetails {
+            val bundle = bundleOf(KEY_EPISODE_DETAILS to episode)
+            return FragmentEpisodeDetails().apply { arguments = bundle }
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        if (context is Navigator) {
+            navigator = context
+        } else {
+            error("Host should implement Navigator interface")
         }
     }
 }
