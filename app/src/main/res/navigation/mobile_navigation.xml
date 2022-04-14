@@ -21,7 +21,7 @@
 
         <action
             android:id="@+id/action_navigation_character_to_navigation_character_filter"
-            app:destination="@id/navigation_character_filter"/>
+            app:destination="@id/navigation_character_filter" />
 
     </fragment>
 
@@ -35,7 +35,7 @@
         android:id="@+id/navigation_character_filter"
         android:name="com.example.rickandmorty.sections.character.fragments.FragmentCharacterFilter"
         android:label="@string/title_character_filter"
-        tools:layout="@layout/fragment_character_filter"/>
+        tools:layout="@layout/fragment_character_filter" />
 
 
     <!--Location!-->

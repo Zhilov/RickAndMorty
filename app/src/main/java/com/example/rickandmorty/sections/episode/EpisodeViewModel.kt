@@ -9,22 +9,22 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class EpisodeViewModel : ViewModel(){
+class EpisodeViewModel : ViewModel() {
     private var mService: RetrofitServices = Common.retrofitService
     var episode = MutableLiveData<Episode>(null)
     var episodes = MutableLiveData<Episodes>(null)
 
-    fun getEpisodes(page: Int){
-            mService.getAllEpisodes(page).enqueue(object: Callback<Episodes> {
-                override fun onResponse(call: Call<Episodes>, response: Response<Episodes>) {
-                    episodes.postValue(response.body())
-                }
+    fun getEpisodes(page: Int) {
+        mService.getAllEpisodes(page).enqueue(object : Callback<Episodes> {
+            override fun onResponse(call: Call<Episodes>, response: Response<Episodes>) {
+                episodes.postValue(response.body())
+            }
 
-                override fun onFailure(call: Call<Episodes>, t: Throwable) {
+            override fun onFailure(call: Call<Episodes>, t: Throwable) {
 
-                }
+            }
 
-            })
+        })
     }
 
     fun getEpisodesWithFilter(

@@ -44,40 +44,4 @@ class CharacterViewModel : ViewModel() {
 
             })
     }
-
-//    fun getCharacters(page: Int) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            mService.getAllCharacters(page).enqueue(object : Callback<Characters> {
-//                override fun onResponse(call: Call<Characters>, response: Response<Characters>) {
-//                    characters.postValue(response.body())
-//                }
-//
-//                override fun onFailure(call: Call<Characters>, t: Throwable) {
-//
-//                }
-//
-//            })
-//        }
-//    }
-//
-//    fun getCharactersWithFilter(
-//        filters: HashMap<String, String>,
-//    ) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            mService.getCharactersWithFilter(filters)
-//                .enqueue(object : Callback<Characters> {
-//                    override fun onResponse(
-//                        call: Call<Characters>,
-//                        response: Response<Characters>,
-//                    ) {
-//                        characters.postValue(response.body())
-//                    }
-//
-//                    override fun onFailure(call: Call<Characters>, t: Throwable) {
-//
-//                    }
-//
-//                })
-//        }
-//    }
 }

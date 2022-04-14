@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.rickandmorty.retrofit.Common
 import com.example.rickandmorty.retrofit.RetrofitServices
-import com.example.rickandmorty.sections.episode.Episodes
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

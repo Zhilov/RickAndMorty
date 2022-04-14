@@ -7,7 +7,7 @@ import java.io.Serializable
 
 data class Episodes(
     @SerializedName("results")
-    var episodes: List<Episode>
+    var episodes: List<Episode>,
 )
 
 @Parcelize
@@ -15,8 +15,8 @@ data class Episode(
     val id: Int,
     val name: String,
     val air_date: String,
-    val episode: String,
+    var episode: String,
     val characters: List<String>,
     val url: String,
-    val created: String,
-): Parcelable, Serializable
+    var created: String,
+) : Parcelable, Serializable

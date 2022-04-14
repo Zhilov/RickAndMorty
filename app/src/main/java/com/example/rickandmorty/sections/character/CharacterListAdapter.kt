@@ -10,13 +10,14 @@ import com.example.rickandmorty.R
 import com.squareup.picasso.Picasso
 
 class CharacterListAdapter(
-    private val clickListener: (Character) -> Unit
+    private val clickListener: (Character) -> Unit,
 ) : RecyclerView.Adapter<CharacterListAdapter.ViewHolder>() {
 
     private val characterList = ArrayList<Character>(0)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_character_list_item, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.fragment_character_list_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -27,7 +28,7 @@ class CharacterListAdapter(
         return characterList.size
     }
 
-    fun updateList(list : List<Character>){
+    fun updateList(list: List<Character>) {
         this.characterList.clear()
         this.characterList.addAll(list)
 
@@ -45,9 +46,12 @@ class CharacterListAdapter(
         fun bind(character: Character) {
             Picasso.get().load(character.image).into(image)
             name.text = character.name
-            species.text = itemView.resources.getString(R.string.character_adapter_species, character.species)
-            status.text = itemView.resources.getString(R.string.character_adapter_status, character.status)
-            gender.text = itemView.resources.getString(R.string.character_adapter_gender, character.gender)
+            species.text =
+                itemView.resources.getString(R.string.character_adapter_species, character.species)
+            status.text =
+                itemView.resources.getString(R.string.character_adapter_status, character.status)
+            gender.text =
+                itemView.resources.getString(R.string.character_adapter_gender, character.gender)
 
             v.setOnClickListener {
                 clickListener.invoke(characterList[adapterPosition])

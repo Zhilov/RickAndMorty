@@ -13,13 +13,14 @@ class FragmentEpisodeFilter : Fragment(R.layout.fragment_episode_filter) {
     private lateinit var navigator: Navigator
     private lateinit var name: EditText
     private lateinit var episode: EditText
-    private lateinit var button: Button
+    private lateinit var buttonApply: Button
+    private lateinit var buttonBack: ImageButton
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindList()
 
-        button.setOnClickListener {
+        buttonApply.setOnClickListener {
 
             val map: HashMap<String, String> = HashMap()
 
@@ -31,12 +32,17 @@ class FragmentEpisodeFilter : Fragment(R.layout.fragment_episode_filter) {
             navigator.navigate(FragmentEpisode.newInstance(map),
                 FragmentEpisode.FRAGMENT_EPISODE_TAG)
         }
+
+        buttonBack.setOnClickListener{
+            navigator.navigateBack()
+        }
     }
 
     private fun bindList() {
         name = requireView().findViewById(R.id.episode_filter_edit_name)
         episode = requireView().findViewById(R.id.episode_filter_edit_episode)
-        button = requireActivity().findViewById(R.id.episode_filter_button_apply)
+        buttonApply = requireView().findViewById(R.id.episode_filter_button_apply)
+        buttonBack = requireView().findViewById(R.id.button_episode_filter_back)
     }
 
     override fun onAttach(context: Context) {

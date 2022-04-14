@@ -8,13 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.R
 
 class EpisodeListAdapter(
-    private val clickListener: (Episode) -> Unit
+    private val clickListener: (Episode) -> Unit,
 ) : RecyclerView.Adapter<EpisodeListAdapter.ViewHolder>() {
 
     private val episodeList = ArrayList<Episode>(0)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_episode_list_item, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.fragment_episode_list_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -25,7 +26,7 @@ class EpisodeListAdapter(
         return episodeList.size
     }
 
-    fun updateList(list : List<Episode>){
+    fun updateList(list: List<Episode>) {
         this.episodeList.clear()
         this.episodeList.addAll(list)
 
@@ -40,10 +41,13 @@ class EpisodeListAdapter(
 
         fun bind(episode: Episode) {
             name.text = episode.name
+            episode.episode = episode.episode.replace("S", "Season: ")
+            episode.episode = episode.episode.replace("E", "\n Episode: ")
             this.episode.text = episode.episode
             airDate.text = episode.air_date
 
-            v.setOnClickListener {adapterPosition
+            v.setOnClickListener {
+                adapterPosition
                 clickListener.invoke(episodeList[adapterPosition])
             }
         }

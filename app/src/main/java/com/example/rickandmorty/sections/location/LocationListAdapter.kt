@@ -8,13 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.R
 
 class LocationListAdapter(
-    private val clickListener: (Location) -> Unit
+    private val clickListener: (Location) -> Unit,
 ) : RecyclerView.Adapter<LocationListAdapter.ViewHolder>() {
 
     private val locationList = ArrayList<Location>(0)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.fragment_location_list_item, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.fragment_location_list_item, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -25,7 +26,7 @@ class LocationListAdapter(
         return locationList.size
     }
 
-    fun updateList(list : List<Location>){
+    fun updateList(list: List<Location>) {
         this.locationList.clear()
         this.locationList.addAll(list)
 
@@ -43,7 +44,8 @@ class LocationListAdapter(
             type.text = location.type
             dimension.text = location.dimension
 
-            v.setOnClickListener {adapterPosition
+            v.setOnClickListener {
+                adapterPosition
                 clickListener.invoke(locationList[adapterPosition])
             }
         }

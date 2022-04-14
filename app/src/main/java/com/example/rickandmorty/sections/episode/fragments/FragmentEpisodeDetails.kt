@@ -2,8 +2,8 @@ package com.example.rickandmorty.sections.episode.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.view.MenuItem
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -16,19 +16,14 @@ class FragmentEpisodeDetails : Fragment(R.layout.fragment_episode_details) {
     private lateinit var navigator: Navigator
     private lateinit var episode: Episode
     private lateinit var name: TextView
+    private lateinit var info: TextView
+    private lateinit var buttonBack: ImageButton
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         getEpisodeFromArguments()
         bindView(episode)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.home -> navigator.navigateBack()
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     private fun getEpisodeFromArguments() {
@@ -46,12 +41,33 @@ class FragmentEpisodeDetails : Fragment(R.layout.fragment_episode_details) {
     private fun bindView(episode: Episode) {
         findViews()
         name.text = episode.name
+        if (info.text.isEmpty()) info.text = addinfo(episode)
+        buttonBack.setOnClickListener {
+            navigator.navigateBack()
+        }
+    }
+
+    private fun addinfo(episode: Episode): StringBuilder {
+        val string = StringBuilder()
+        val list = ArrayList<String>()
+        list.add("Air date: " + episode.air_date)
+        list.add("Episode: " + episode.episode)
+        episode.created = episode.created.replace("T", "\nTime: ")
+        episode.created =
+            episode.created.removeRange(episode.created.length - 5, episode.created.length)
+        list.add("Created: " + episode.created)
+
+        for (s: String in list) {
+            string.append(s + "\n")
+        }
+        return string
     }
 
     private fun findViews() {
         requireView().run {
             name = findViewById(R.id.text_episode_details_name)
-
+            info = findViewById(R.id.text_episode_details_info)
+            buttonBack = findViewById(R.id.button_episode_details_back)
         }
     }
 

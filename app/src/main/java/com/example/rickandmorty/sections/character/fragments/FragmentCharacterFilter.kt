@@ -10,6 +10,7 @@ import com.example.rickandmorty.R
 
 class FragmentCharacterFilter : Fragment(R.layout.fragment_character_filter) {
 
+    private lateinit var buttonBack: ImageButton
     private lateinit var navigator: Navigator
     private lateinit var name: EditText
     private lateinit var species: EditText
@@ -36,9 +37,14 @@ class FragmentCharacterFilter : Fragment(R.layout.fragment_character_filter) {
             navigator.navigate(FragmentCharacter.newInstance(map),
                 FragmentCharacter.FRAGMENT_CHARACTER_TAG)
         }
+
+        buttonBack.setOnClickListener {
+            navigator.navigateBack()
+        }
     }
 
     private fun bindList() {
+        buttonBack = requireView().findViewById(R.id.button_character_filter_back)
         name = requireView().findViewById(R.id.character_filter_edit_name)
         species = requireView().findViewById(R.id.character_filter_edit_species)
         type = requireView().findViewById(R.id.character_filter_edit_type)

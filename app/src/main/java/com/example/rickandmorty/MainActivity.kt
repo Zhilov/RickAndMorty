@@ -34,17 +34,26 @@ class MainActivity : AppCompatActivity(), Navigator {
 
     override fun navigate(fragment: Fragment, tag: String) {
         when (tag) {
-            FragmentCharacter.FRAGMENT_CHARACTER_TAG -> navController.navigate(R.id.navigation_character, fragment.arguments)
-            FragmentCharacterDetails.FRAGMENT_CHARACTER_DETAILS_TAG -> navController.navigate(R.id.navigation_character_details, fragment.arguments)
-            FragmentCharacterFilter.FRAGMENT_CHARACTER_FILTER_TAG -> navController.navigate(R.id.navigation_character_filter, fragment.arguments)
+            FragmentCharacter.FRAGMENT_CHARACTER_TAG -> navController.navigate(R.id.navigation_character,
+                fragment.arguments)
+            FragmentCharacterDetails.FRAGMENT_CHARACTER_DETAILS_TAG -> navController.navigate(R.id.navigation_character_details,
+                fragment.arguments)
+            FragmentCharacterFilter.FRAGMENT_CHARACTER_FILTER_TAG -> navController.navigate(R.id.navigation_character_filter,
+                fragment.arguments)
 
-            FragmentLocation.FRAGMENT_LOCATION_TAG -> navController.navigate(R.id.navigation_location, fragment.arguments)
-            FragmentLocationDetails.FRAGMENT_LOCATION_DETAILS_TAG -> navController.navigate(R.id.navigation_location_details, fragment.arguments)
-            FragmentLocationFilter.FRAGMENT_LOCATION_FILTER_TAG -> navController.navigate(R.id.navigation_location_filter, fragment.arguments)
+            FragmentLocation.FRAGMENT_LOCATION_TAG -> navController.navigate(R.id.navigation_location,
+                fragment.arguments)
+            FragmentLocationDetails.FRAGMENT_LOCATION_DETAILS_TAG -> navController.navigate(R.id.navigation_location_details,
+                fragment.arguments)
+            FragmentLocationFilter.FRAGMENT_LOCATION_FILTER_TAG -> navController.navigate(R.id.navigation_location_filter,
+                fragment.arguments)
 
-            FragmentEpisode.FRAGMENT_EPISODE_TAG -> navController.navigate(R.id.navigation_episode, fragment.arguments)
-            FragmentEpisodeDetails.FRAGMENT_EPISODE_DETAILS_TAG -> navController.navigate(R.id.navigation_episode_details, fragment.arguments)
-            FragmentEpisodeFilter.FRAGMENT_EPISODE_FILTER_TAG -> navController.navigate(R.id.navigation_episode_filter, fragment.arguments)
+            FragmentEpisode.FRAGMENT_EPISODE_TAG -> navController.navigate(R.id.navigation_episode,
+                fragment.arguments)
+            FragmentEpisodeDetails.FRAGMENT_EPISODE_DETAILS_TAG -> navController.navigate(R.id.navigation_episode_details,
+                fragment.arguments)
+            FragmentEpisodeFilter.FRAGMENT_EPISODE_FILTER_TAG -> navController.navigate(R.id.navigation_episode_filter,
+                fragment.arguments)
 
         }
     }
